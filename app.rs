@@ -1,6 +1,13 @@
 fn main(){
+
+    // Este es un comentario de una sola línea
     println!("Hola mundo");
     println!("Adios mundo");
+
+    /* Este es un comentario de varias líneas
+    que puede abarcar varias líneas de texto. */
+
+
     let x = 5;
     println!("El valor de x es: {}", x);
     let resultado = suma(3, 4);
