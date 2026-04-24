@@ -5,6 +5,12 @@ fn main(){
     println!("El valor de x es: {}", x);
     let resultado = suma(3, 4);
     println!("El resultado de la suma es: {}", resultado);
+
+    saludar("Alice");
+}
+
+fn saludar(nombre: &str) {
+    println!("Hola, {}!", nombre);
 }
 
 fn suma(a: i32, b: i32) -> i32 {
