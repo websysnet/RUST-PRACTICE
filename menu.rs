@@ -1,8 +1,22 @@
-import std::io;
-import std::io::Write;
-import std::num::ParseIntError;
-import std::process;
 
+mod operaciones;
+use std::io::{self, Write};
+use operaciones::{suma, resta};
+
+fn leer_entero(prompt: &str) -> i32 {
+    loop {
+        print!("{}", prompt);
+        io::stdout().flush().unwrap();
+
+        let mut input = String::new();
+        io::stdin().read_line(&mut input).expect("Error al leer la entrada");
+
+        match input.trim().parse() {
+            Ok(num) => return num,
+            Err(_) => println!("Entrada no válida. Por favor, ingrese un número."),
+        }
+    }
+}
 
 fn main(){
     println!("Bienvenido al menú de opciones");
@@ -10,8 +24,8 @@ fn main(){
     println!("2. Restar dos números");
     println!("3. Salir");
 
-    let opcion = 1; // Aquí podrías leer la opción del usuario
-    como se lee la opcion del usuario es algo que se puede implementar con la función std::io::stdin().read_line(&mut input) y luego parsear el input a un número entero.
+    let opcion: i32 = leer_entero("Ingrese su opción: ");
+
     
 
 
